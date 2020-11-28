@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "323489129694",
+    "firebase_url": "https://movid19-326a5.firebaseio.com",
+    "project_id": "movid19-326a5",
+    "storage_bucket": "movid19-326a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323489129694:android:8cd653f975ff10837ece4f",
+        "android_client_info": {
+          "package_name": "com.example.movid19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323489129694-4iifpiq8ham0325rcb5295mg03b1rgpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2XUfMldGiq0SADTsPGpQpRNjMWikjjDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323489129694-4iifpiq8ham0325rcb5295mg03b1rgpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

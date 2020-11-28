@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/row_user_main_newreleases">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddMovieActivity"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/movie_add_image_view"
+            android:layout_width="270dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="39dp"
+            />
+
+        <Button
+            android:id="@+id/movie_add_choose_img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="add image" />
+
+        <EditText
+            android:id="@+id/movie_add_title"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:hint="Title"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/movie_add_description"
+            android:layout_width="340dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Description"
+            android:textSize="15sp"
+            />
+        
+        <ProgressBar
+            android:id="@+id/movie_add_progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_marginBottom="15dp"/>
+        
+        <Button
+            android:id="@+id/movie_add_upload_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/holo_green_light"
+            android:text="upload"
+            android:textColor="#FCFEFD" />
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="230dp"
+    android:id="@+id/row_user_main_newreleases">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+        <include layout="@layout/item_user_main_newreleases" android:id="@+id/newreleases_image1"/>
+        <include layout="@layout/item_user_main_newreleases" android:id="@+id/newreleases_image2"/>
+        <include layout="@layout/item_user_main_newreleases" android:id="@+id/newreleases_image3"/>
+
+
+
+    </LinearLayout>
+
+</HorizontalScrollView>
