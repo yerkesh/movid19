@@ -34,8 +34,8 @@ public class EditUpdateMovieActivity extends AppCompatActivity {
         mKey = getIntent().getStringExtra("key");
         mOption = getIntent().getStringExtra("option");
         datas = (UploadMovie) getIntent().getSerializableExtra("datas");
-        mImageView.setImageAlpha(R.mipmap.ic_launcher);
-        Picasso.with(this).load(datas.getImageUri()).placeholder(R.mipmap.ic_launcher).centerCrop().fit().into(mImageView);
+
+        Picasso.with(this).load(datas.getImageUri()).centerCrop().fit().into(mImageView);
 
         mTitle.setText(datas.getTitle());
         mDescription.setText(datas.getDescription());
@@ -57,7 +57,6 @@ public class EditUpdateMovieActivity extends AppCompatActivity {
                 }
             }
         });
-
 
     }
 }

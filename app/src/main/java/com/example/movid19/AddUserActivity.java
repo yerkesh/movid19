@@ -90,8 +90,7 @@ public class AddUserActivity extends AppCompatActivity {
                 }
 
                 else {
-                    System.out.println(nameUser + "  " + confirmUserWord);
-                    Toast.makeText(getApplicationContext(), nameUser + " dsf " + confirmUserWord , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddUserActivity.this, "\t\t\t\tPlease, fill all the fills\nand correctly confirm password", Toast.LENGTH_LONG).show();
                 }
             }
         });

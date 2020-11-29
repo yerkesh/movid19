@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="110dp"
         android:hint="User name"
-        android:text="not null"/>
+        />
 
     <EditText
         android:id="@+id/user_add_surname"
@@ -28,7 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="230dp"
-        android:hint="User email"/>
+        android:hint="User email"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:id="@+id/user_add_phone"
@@ -44,7 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
-        android:hint="User password"/>
+        android:hint="User password"
+        android:inputType="textPassword"
+        />
 
     <EditText
         android:id="@+id/user_add_password_conf"
@@ -52,7 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="410dp"
-        android:hint="Confirm password" />
+        android:hint="Confirm password"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/user_add_button"
