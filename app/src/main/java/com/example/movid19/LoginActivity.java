@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (signUpActivity.checkField(email) && signUpActivity.checkField(password)) {
+                    Toast.makeText(getApplicationContext(), "Loading...", Toast.LENGTH_LONG).show();
                     firebaseAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(
                             new OnSuccessListener<AuthResult>() {
                                 @Override
@@ -59,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     ).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(signUpActivity, "Password or Email is incorrect" + e.getMessage() , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Password or Email is incorrect", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
