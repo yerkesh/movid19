@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainUserActivity">
 
+    <include layout="@layout/row_user_main_newreleases" android:id="@+id/main_user_new_releases"/>
+
     <Button
         android:id="@+id/main_user_btn_logout"
         android:layout_width="200dp"
