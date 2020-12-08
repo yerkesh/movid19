@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (signUpActivity.checkField(email) && signUpActivity.checkField(password)) {
-                    Toast.makeText(getApplicationContext(), "Loading...", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Please, wait...", Toast.LENGTH_LONG).show();
                     firebaseAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(
                             new OnSuccessListener<AuthResult>() {
                                 @Override

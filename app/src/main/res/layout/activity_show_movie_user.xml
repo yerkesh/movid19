@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ShowMovieUserActivity"
@@ -34,5 +34,33 @@
             android:layout_gravity="center_horizontal"
             android:text="here is description about selected movie it's really cool I recoment it to watch I have a lot og emotions from this movie"
             android:textSize="20sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/show_movie_user_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="16dp"
+            app:borderWidth="0dp"
+            app:useCompatPadding="true"
+            android:backgroundTint="#F9F7F7"
+            android:src="@drawable/ic_baseline_add_circle_24"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/show_movie_user_basket_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="16dp"
+            app:borderWidth="0dp"
+            app:useCompatPadding="true"
+            android:backgroundTint="#F9F7F7"
+            android:src="@drawable/ic_baseline_shopping_cart_24"/>
+
+
     </LinearLayout>
 </ScrollView>

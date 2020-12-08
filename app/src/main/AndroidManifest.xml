@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowMovieUserActivity"></activity>
+        <activity
+            android:name=".FloatingButtonActivity"
+            android:label="@string/title_activity_floating_button"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ShowMovieUserActivity" />
         <activity android:name=".EditUpdateMovieActivity" />
         <activity android:name=".EditMovieActivity" />
         <activity android:name=".AddMovieActivity" />
