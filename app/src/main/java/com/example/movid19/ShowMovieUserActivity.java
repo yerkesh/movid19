@@ -59,14 +59,14 @@ public class ShowMovieUserActivity extends AppCompatActivity {
                         Toast.makeText(ShowMovieUserActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-                Toast.makeText(ShowMovieUserActivity.this, "Clicked successfully", Toast.LENGTH_SHORT).show();
             }
         });
         
         basket_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ShowMovieUserActivity.this, "Basket clicked", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(getApplicationContext(),BasketUserActivity.class);
+                startActivity(intent1);
             }
         });
 
