@@ -153,7 +153,7 @@ public class EditUpdateUserActivity extends AppCompatActivity {
         
 
         
-        Toast.makeText(this, ""+datas.getDocumentId(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "User ID is: "+datas.getDocumentId(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

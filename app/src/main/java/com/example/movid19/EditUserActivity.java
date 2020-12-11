@@ -2,6 +2,10 @@ package com.example.movid19;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 
-public class EditUserActivity extends AppCompatActivity {
+public class EditUserActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private RecyclerView listUsers;
     private String namesUsers[];
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -32,6 +36,8 @@ public class EditUserActivity extends AppCompatActivity {
     private CollectionReference collectionReference = firestore.collection("Users");
     private ArrayList<Note> mNotes;
     private String option;
+    private Spinner spinner;
+    private int FIX = 0;
 
 
 
@@ -42,21 +48,31 @@ public class EditUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_user);
 //        textV = findViewById(R.id.user_edit_test);
 
+
+
         listUsers = findViewById(R.id.listusers);
+        spinner = findViewById(R.id.edit_user_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.search, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
 
         System.out.println(collectionReference.limit(2));
         System.out.println(collectionReference.toString());
 
         option = getIntent().getStringExtra("option");
         mNotes = new ArrayList<Note>();
-        loadDataFromFirebase();
+        loadDataFromFirebase("Email");
 
 
     }
 
 
 
-    public void loadDataFromFirebase() {
+    public void loadDataFromFirebase(final String s) {
+        namesUsers = new String[10];
+        mNotes.clear();
 
 //        loadNodes(textV);
         firestore.collection("Users").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -74,12 +90,35 @@ public class EditUserActivity extends AppCompatActivity {
                         }
                     }
                 }
-                namesUsers = new String[mNotes.size()];
-                for (int i = 0; i < mNotes.size(); i++) {
 
-                    namesUsers[i] = mNotes.get(i).getName();
-
+                if (s.equals("Name")) {
+                    namesUsers = new String[mNotes.size()];
+                    for (int i = 0; i < mNotes.size(); i++) {
+                        namesUsers[i] = mNotes.get(i).getName();
+                    }
                 }
+
+                if (s.equals("Surname")) {
+                    namesUsers = new String[mNotes.size()];
+                    for (int i = 0; i < mNotes.size(); i++) {
+                        namesUsers[i] = mNotes.get(i).getSurname();
+                    }
+                }
+
+                if (s.equals("Email") ) {
+                    namesUsers = new String[mNotes.size()];
+                    for (int i = 0; i < mNotes.size(); i++) {
+                        namesUsers[i] = mNotes.get(i).getEmail();
+                    }
+                }
+
+                if (s.equals("Phone Number")) {
+                    namesUsers = new String[mNotes.size()];
+                    for (int i = 0; i < mNotes.size(); i++) {
+                        namesUsers[i] = mNotes.get(i).getPhoneNumber();
+                    }
+                }
+
 
                 RecyclerAdapter adapter = new RecyclerAdapter(EditUserActivity.this,namesUsers,mNotes,option);
                 listUsers.setAdapter(adapter);
@@ -99,5 +138,19 @@ public class EditUserActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(getApplicationContext(),AdminMainActivity.class));
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        if (FIX > 0) {
+            String text = adapterView.getItemAtPosition(i).toString();
+            loadDataFromFirebase(text);
+        }
+        FIX++;
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
