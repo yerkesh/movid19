@@ -26,7 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainUserActivity extends AppCompatActivity {
-    private Button logout;
     private int linearLayout = R.id.row_user_main_newreleases;
     private RecyclerView recyclerView, trendingRecycler, actionRecycler, tvRecyler;
     private ArrayList<UploadMovie> uploadMovies;
@@ -37,7 +36,7 @@ public class MainUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_user);
-        logout = findViewById(R.id.main_user_btn_logout);
+
 
         progressBar = findViewById(R.id.user_main_progressbar);
 
@@ -101,14 +100,7 @@ public class MainUserActivity extends AppCompatActivity {
         getMovieData("Trending Now", trendingAdapter, trendingList);
         getMovieData("Action", actionAdapter, actionList);
         getMovieData("TV Shows", tvAdapter, tvList);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
-            }
-        });
+
     }
 
     public void getMovieData(String reference, final UserMovieRecycler recycler, final ArrayList uploads) {

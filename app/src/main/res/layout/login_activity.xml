@@ -35,7 +35,8 @@
         android:textAlignment="center"
         android:textColor="#F5F7F7"
         android:textColorHint="#C9CFCF"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/signin_btn_signin"

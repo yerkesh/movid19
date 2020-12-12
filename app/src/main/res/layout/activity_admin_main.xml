@@ -60,19 +60,8 @@
         android:id="@+id/main_admin_btn_logout"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         android:text="Log out" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="226dp"
-        android:text="Admin logged in"
-        android:textSize="30sp" />
-
 
 </LinearLayout>
